@@ -64,3 +64,25 @@ let bar = {
 };
 
 console.log(bar.add.call(foo3));
+
+let foo4 = { bar: 1, xyz: 3 };
+let baz4 = Object.create(foo);
+baz4.qux = "Why not?";
+
+console.log(Object.keys(baz4).toString());
+for (let prop in baz4) {
+  if (baz4.hasOwnProperty(prop)) {
+    console.log(prop);
+  }
+}
+
+Object.keys(baz4).forEach(prop => console.log(prop));
+
+Object.keys(baz4).forEach(prop => {
+  if (baz4.hasOwnProperty(prop)) {
+    console.log(prop);
+  }
+});
+
+console.log(Object.getPrototypeOf({ a: 1, b: 2 }));
+console.log(Object.prototype);

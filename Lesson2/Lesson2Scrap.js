@@ -109,3 +109,21 @@ Object.getPrototypeOf(z).foo = 5;
 console.log(x.foo);
 console.log(y.foo);
 console.log(z.foo);
+
+let obj = {
+  message: 'JavaScript',
+};
+
+function foo() {
+  console.log(this.message);
+}
+
+let newFoo = foo.bind(obj);
+newFoo();
+
+let abc = { foo: 1, bar: 2 };
+let pqr = Object.create(abc);
+pqr.qux = 3;
+pqr.bar = 4;
+
+console.log(abc.hasOwnProperty('qux'));
