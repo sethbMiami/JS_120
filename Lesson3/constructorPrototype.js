@@ -7,8 +7,10 @@ function Dog(name, breed, weight) {
   this.name = name;
   this.breed = breed;
   this.weight = weight;
-
+  Dog.allDogs.push(this);
 }
+
+Dog.allDogs = [];
 
 
 Dog.prototype.bark = function() {
@@ -62,3 +64,7 @@ let objLiteral = {
 };
 
 console.log(objLiteral.__proto__);
+
+Dog.species = "Canis lupus";
+console.log(Dog.species);
+console.log(Dog.allDogs);
