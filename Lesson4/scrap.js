@@ -81,3 +81,21 @@ console.log(Object.getPrototypeOf(person).constructor === Person); // true
 console.log(person.school === undefined);                          // true
 console.log(person.speak() === "Hello, my name is Pete.");         // true
 console.log(person.learn === undefined);                           // true
+
+let array = ['a', 1, 'b', 'z', 1, 'b', 'f', 1, 'r'];
+
+function aftermath(array) {
+  for (let idx = 0; idx < array.length; idx++) {
+    let element = array[idx];
+    if (typeof element === 'number') {
+      array.splice(idx - element, idx + element + 1);
+      idx = 0;
+    } //else if (typeof element === 'number') {
+    //   array.splice(idx - element, idx + element + 1);
+    // }
+    console.log(array);
+  }
+  return array;
+}
+console.log(aftermath(array));
+
