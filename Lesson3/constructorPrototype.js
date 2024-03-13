@@ -68,3 +68,7 @@ console.log(objLiteral.__proto__);
 Dog.species = "Canis lupus";
 console.log(Dog.species);
 console.log(Dog.allDogs);
+console.log('----------------break-------------');
+console.log('PROTOTYPE ',Dog.prototype);
+console.log('CONSTRUCTOR ',Dog.constructor);
+console.log('PROTOTYPE.CONSTRUCTOR ',Dog.prototype.constructor);

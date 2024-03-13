@@ -1,4 +1,5 @@
 /* eslint-disable max-lines-per-function */
+//"use strict";
 
 let mechanic = {
   name: "Seth",
@@ -78,3 +79,15 @@ let cat = {
 };
 
 cat.func();
+
+num = 5;
+function logNum() {
+  console.log(this.num);
+}
+
+let obj = {
+  num: 42
+};
+
+logNum.call(obj); // logs 42
+logNum();

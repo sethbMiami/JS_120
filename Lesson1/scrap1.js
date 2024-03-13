@@ -86,3 +86,15 @@ Object.keys(baz4).forEach(prop => {
 
 console.log(Object.getPrototypeOf({ a: 1, b: 2 }));
 console.log(Object.prototype);
+
+let john = {
+  firstName: 'John',
+  lastName: 'Doe',
+  greetings() {
+    console.log('hello, ' + this.firstName + ' ' + this.lastName);
+  },
+};
+
+john.greetings();         // context is john
+let foo5 = john.greetings; // Strips context
+foo5();                    // context is now the global object
