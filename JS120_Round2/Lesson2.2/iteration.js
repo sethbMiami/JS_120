@@ -70,14 +70,38 @@ class subTestThis extends TestThis {
   getParent() {
     return Object.getPrototypeOf(this);
   }
+
+  testMethod() {
+    this.extra.forEach(num => console.log(num));
+  }
 }
 
 let prime = new TestThis('prime');
 console.log(prime.toString());
 
-let subPrime = new subTestThis('subPrime', 'random');
+let subPrime = new subTestThis('subPrime', [1, 2, 3]);
 console.log(subPrime.toString());
 console.log(subPrime instanceof TestThis);
 console.log(subPrime instanceof subTestThis);
 console.log(Object.getPrototypeOf(subPrime));
 console.log(subPrime.getParent());
+
+subPrime.testMethod();
+console.log(typeof subPrime.testMethod);
+console.log(typeof subPrime);
+
+
+let copyMethodObject = {
+  time: 'noon',
+
+  coolMethod() {
+    return this;
+  }
+};
+
+console.log(copyMethodObject.coolMethod());
+
+let copyFunction = copyMethodObject.coolMethod;
+console.log(copyFunction());
+let withParenth = copyMethodObject.coolMethod;
+console.log(withParenth());
