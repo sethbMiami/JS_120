@@ -78,3 +78,5 @@ console.log(randObj.toString());
 for (let [key, value] of Object.entries(randObj)) {
   console.log(key, value);
 }
+
+console.log(Dog.prototype.constructor === Dog);

@@ -54,3 +54,12 @@ Dog.myPrototype = {
 };
 
 console.log(Dog);
+
+let stringString = 'Im a string';
+let objectString = new String('Im an object');
+
+console.log(stringString, objectString);
+console.log(typeof stringString, typeof objectString);
+
+let extractString = String.prototype.valueOf(objectString);
+console.log(extractString, typeof extractString);
